@@ -5,8 +5,6 @@ var router=new express.Router()
 
 router.get('/tasks',auth,async (req,res)=>{
 
-    if(req.query.completed)
-    
     try{
         var tasks=await Task.findOne({owner:req.user._id})
         res.send(tasks)
